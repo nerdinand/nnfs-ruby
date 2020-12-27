@@ -1,0 +1,34 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.4.4)
+    gruff (0.12.1)
+      histogram
+      rmagick
+    histogram (0.2.4.1)
+    numo-narray (0.9.1.8)
+    rmagick (4.1.2)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gruff (~> 0.12.1)
+  numo-narray (~> 0.9.1.8)
+  rspec (~> 3.10)
+
+BUNDLED WITH
+   2.1.4
