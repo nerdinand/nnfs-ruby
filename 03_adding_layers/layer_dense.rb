@@ -3,6 +3,7 @@ require 'numo/narray'
 class LayerDense
   WEIGHTS_SCALING_FACTOR = 0.01
 
+  attr_accessor :weights, :biases
   attr_reader :output
 
   def initialize(n_inputs, n_neurons)
