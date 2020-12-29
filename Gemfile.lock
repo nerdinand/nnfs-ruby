@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (11.1.3)
     gruff (0.12.1)
       histogram
       rmagick
@@ -14,6 +15,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   gruff (~> 0.12.1)
   numo-linalg (~> 0.1.5)
   numo-narray (~> 0.9.1.8)
