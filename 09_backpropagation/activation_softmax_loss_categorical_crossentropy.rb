@@ -27,7 +27,8 @@ class ActivationSoftmaxLossCategoricalCrossentropy
     # Copy so we can safely modify
     @dinputs = dvalues.dup
     # Calculate gradient
-    @dinputs[0...n_samples, y_true] -= 1
+    view = @dinputs.view.at(0...n_samples, y_true) 
+    view[true] -= 1
     # Normalize gradient
     @dinputs = @dinputs / n_samples
   end
