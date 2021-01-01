@@ -8,11 +8,11 @@ require_relative '../04_activation_functions/activation_relu'
 require_relative '../04_activation_functions/activation_softmax'
 require_relative '../05_calculating_loss/loss_categorical_crossentropy'
 
-x, y = VerticalData.create(100, 3)
+x, y = VerticalData.create(n_samples: 100, n_classes: 3)
 
-dense1 = LayerDense.new(2, 3)
+dense1 = LayerDense.new(n_inputs: 2, n_neurons: 3)
 activation1 = ActivationReLU.new
-dense2 = LayerDense.new(3, 3)
+dense2 = LayerDense.new(n_inputs: 3, n_neurons: 3)
 activation2 = ActivationSoftmax.new
 
 loss_function = LossCategoricalCrossentropy.new

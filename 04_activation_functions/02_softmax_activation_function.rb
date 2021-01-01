@@ -13,14 +13,14 @@ p softmax.output
 
 
 # Create dataset
-x, y = SpiralData.create(100, 3)
+x, y = SpiralData.create(n_samples: 100, n_classes: 3)
 # Create Dense layer with 2 input features and 3 output values
-dense1 = LayerDense.new(2, 3)
+dense1 = LayerDense.new(n_inputs: 2, n_neurons: 3)
 # Create ReLU activation (to be used with Dense layer):
 activation1 = ActivationReLU.new
 # Create second Dense layer with 3 input features (as we take output
 # of previous layer here) and 3 output values
-dense2 = LayerDense.new(3, 3)
+dense2 = LayerDense.new(n_inputs: 3, n_neurons: 3)
 # Create Softmax activation (to be used with Dense layer):
 activation2 = ActivationSoftmax.new
 # Make a forward pass of our training data through this layer

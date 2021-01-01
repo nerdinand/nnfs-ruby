@@ -23,10 +23,10 @@ dense2 = LayerDense.new(n_inputs: 64, n_neurons: 3)
 # Create Softmax classifier's combined loss and activation
 loss_activation = ActivationSoftmaxLossCategoricalCrossentropy.new
 # Create optimizer
-optimizer = OptimizerSGD.new
+optimizer = OptimizerSGD.new(learning_rate: 1.5, decay: 1e-2)
 
 # Train in loop
-20001.times do |epoch|
+10001.times do |epoch|
   # Perform a forward pass of our training data through this layer
   dense1.forward(x)
   # Perform a forward pass through activation function
@@ -49,7 +49,7 @@ optimizer = OptimizerSGD.new
   accuracy = Numo::DFloat.cast(predictions.eq(y)).mean
 
   if (epoch % 100).zero?
-    puts "epoch: #{epoch}, acc: #{accuracy.round(3)}, loss: #{loss.round(3)}"
+    puts "epoch: #{epoch}, acc: #{accuracy.round(3)}, loss: #{loss.round(3)}, lr: #{optimizer.current_learning_rate}"
   end
 
   # Backward pass
@@ -59,6 +59,8 @@ optimizer = OptimizerSGD.new
   dense1.backward(activation1.dinputs)
   
   # Update weights and biases
+  optimizer.pre_update_params
   optimizer.update_params(dense1)
   optimizer.update_params(dense2)
+  optimizer.post_update_params
 end

@@ -23,10 +23,10 @@ dense2 = LayerDense.new(n_inputs: 64, n_neurons: 3)
 # Create Softmax classifier's combined loss and activation
 loss_activation = ActivationSoftmaxLossCategoricalCrossentropy.new
 # Create optimizer
-optimizer = OptimizerSGD.new
+optimizer = OptimizerSGD.new(learning_rate: 0.85)
 
 # Train in loop
-20001.times do |epoch|
+10001.times do |epoch|
   # Perform a forward pass of our training data through this layer
   dense1.forward(x)
   # Perform a forward pass through activation function

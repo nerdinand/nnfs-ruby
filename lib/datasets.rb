@@ -16,7 +16,7 @@ end
 
 
 class VerticalData
-	def self.create(n_samples, n_classes)
+	def self.create(n_samples:, n_classes:)
     x = Numo::DFloat.zeros(n_samples * n_classes, 2)
     y = Numo::Int8.zeros(n_samples * n_classes)
 
@@ -31,7 +31,7 @@ class VerticalData
 end
 
 class SineData
-  def self.create(n_samples)
+  def self.create(n_samples:)
     x = Numo::DFloat.linspace(-1, 1, n_samples)
     y = Numo::DFloat::Math.sin(2 * Math::PI * x)
     [Numo::NArray[x, y].transpose, Numo::Int8.zeros(n_samples)]
@@ -39,7 +39,7 @@ class SineData
 end
 
 class SpiralData
-  def self.create(n_samples, n_classes)
+  def self.create(n_samples:, n_classes:)
     x = Numo::DFloat.zeros(n_samples * n_classes, 2)
     y = Numo::Int8.zeros(n_samples * n_classes)
 
