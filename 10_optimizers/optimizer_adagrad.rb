@@ -21,8 +21,8 @@ class OptimizerAdagrad
     layer.weight_cache += layer.dweights ** 2
     layer.bias_cache += layer.dbiases ** 2
 
-    layer.weights += -@learning_rate * layer.dweights / (Numo::DFloat::Math.sqrt(layer.weight_cache) + @epsilon)
-    layer.biases += -@learning_rate * layer.dbiases / (Numo::DFloat::Math.sqrt(layer.bias_cache) + @epsilon)
+    layer.weights += -@current_learning_rate * layer.dweights / (Numo::DFloat::Math.sqrt(layer.weight_cache) + @epsilon)
+    layer.biases += -@current_learning_rate * layer.dbiases / (Numo::DFloat::Math.sqrt(layer.bias_cache) + @epsilon)
   end
 
   def post_update_params

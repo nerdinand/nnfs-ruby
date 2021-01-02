@@ -22,8 +22,8 @@ class OptimizerRMSProp
     layer.weight_cache = @rho * layer.weight_cache + (1 - @rho) * layer.dweights ** 2
     layer.bias_cache = @rho * layer.bias_cache + (1 - @rho) * layer.dbiases ** 2
 
-    layer.weights += -@learning_rate * layer.dweights / (Numo::DFloat::Math.sqrt(layer.weight_cache) + @epsilon)
-    layer.biases += -@learning_rate * layer.dbiases / (Numo::DFloat::Math.sqrt(layer.bias_cache) + @epsilon)
+    layer.weights += -@current_learning_rate * layer.dweights / (Numo::DFloat::Math.sqrt(layer.weight_cache) + @epsilon)
+    layer.biases += -@current_learning_rate * layer.dbiases / (Numo::DFloat::Math.sqrt(layer.bias_cache) + @epsilon)
   end
 
   def post_update_params
