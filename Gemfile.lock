@@ -8,7 +8,7 @@ GEM
     histogram (0.2.4.1)
     numo-linalg (0.1.5)
       numo-narray (>= 0.9.1.4)
-    numo-narray (0.9.1.8)
+    numo-narray (0.9.1.9)
     rake (13.0.3)
     rmagick (4.1.2)
 
@@ -23,4 +23,4 @@ DEPENDENCIES
   rake (~> 13.0, >= 13.0.3)
 
 BUNDLED WITH
-   2.1.4
+   2.2.3
